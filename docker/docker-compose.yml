@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+
+  tomcat:
+    build: .
+    container_name: DevOps-Tomcat
+    working_dir: /opt/tomcat/latest/webapps
+    ports:
+     - "8090:8080"
+    networks:
+      - devops-network    
+
+networks:
+  devops-network:
+    driver: bridge        
